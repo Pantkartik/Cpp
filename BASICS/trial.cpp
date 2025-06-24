@@ -40,35 +40,66 @@
 
 
 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//   typedef struct student{
+//     char name;
+//     int marks[20];
+//     int rollno;
+
+//    } stdt;
+
+//    stdt s1,s2;
+//    int n;
+//    printf("Enter the number of student : ");
+//    cin>>n;
+
+//   for(int i=1;i<=n;i++){
+//     printf("Enter the marks : ");
+//     cin>>s1.marks[i];
+//     printf("Enter the name of the student : ");
+//     cin>>s1.name;
+//     printf("Enter the roll no : ");
+//     cin>>s1.rollno;
+   
+// } 
+
+// cout<<" Name : "<<s1.name<<endl;
+// cout<<" Roll no : "<<s1.rollno<<endl;
+// for(int i=1;i<=n;i++){
+//    cout<<" Marks : "<<s1.marks[i]; 
+// }
+
+// }
+
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+// int n1;
+
+//   cout<<"enter the number : "<<endl;
+//   cin>>n1;
+//   cout<<"the number is:" <<n1;
+//   cout<<endl;
+
+// }
+ 
+
+// to print the 2 number sum 
 #include<iostream>
 using namespace std;
 int main(){
-  typedef struct student{
-    char name;
-    int marks[20];
-    int rollno;
+  // take input from the user and then sum of them
+  int num1,num2;
+  cout<<"Enter the number 1 : "<<endl;
+  cin>>num1;
+  cout<<"Enter the number 2: "<<endl;
+  cin>>num2;
 
-   } stdt;
-
-   stdt s1,s2;
-   int n;
-   printf("Enter the number of student : ");
-   cin>>n;
-
-  for(int i=1;i<=n;i++){
-    printf("Enter the marks : ");
-    cin>>s1.marks[i];
-    printf("Enter the name of the student : ");
-    cin>>s1.name;
-    printf("Enter the roll no : ");
-    cin>>s1.rollno;
-   
-} 
-
-cout<<" Name : "<<s1.name<<endl;
-cout<<" Roll no : "<<s1.rollno<<endl;
-for(int i=1;i<=n;i++){
-   cout<<" Marks : "<<s1.marks[i]; 
-}
-
+  cout<<"SUM OF THE NUMBER IS : "<<endl;
+  cout<<num1+num2;
+  cout<<"\n";
+  cout<<" CODE EXECUTED ......"<<endl;
 }
