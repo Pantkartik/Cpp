@@ -70,7 +70,7 @@ int search_binary(int arr[],int size ,int key){
             start=mid+1;
         }
         else{
-            start=mid-1;
+            end=mid-1;
         }
         mid=(start+end)/2;
     }    return -1;
@@ -82,3 +82,37 @@ int main()
     int search = search_binary(arr,size,6);
     cout<<"Element is found at "<<search<<endl;
 }
+
+
+
+
+////   this is the correct code 
+
+
+#include<iostream>
+using namespace std;
+int search_binary(int arr[],int size,int key){
+    int start=0,end=size-1;
+    // int mid=(start+end)/2;      // this doesnot comes in the integer value spectrum 
+    int mid = start + ((end-start)/2);
+    while(start<=end){
+        if(arr[mid]==key){
+            return mid;
+        }
+        if(key>arr[mid]){
+            start=mid+1;
+        }
+        else{
+            start=mid-1;
+        }
+     mid = start + ((end-start)/2);
+        
+    }
+    return -1;
+}
+ int main(){
+    int arr[6]={1,3,5,7,9,10};
+    int size =6;
+    int index=search_binary(arr,size,7);
+    cout<<" Elements is found at "<<index<<endl;
+ }

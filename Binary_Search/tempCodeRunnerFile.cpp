@@ -1,3 +1,4 @@
+
 #include<iostream>
 using namespace std; 
 int search_binary(int arr[],int size ,int key){
@@ -24,3 +25,4 @@ int main()
     int search = search_binary(arr,size,6);
     cout<<"Element is found at "<<search<<endl;
 }
+
