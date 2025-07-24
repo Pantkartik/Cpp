@@ -48,3 +48,12 @@
 //     }
 //     mid = (start+end)/2;
 // } return start;
+
+
+// to find  the peak element of peak mountain element '
+
+#include<iostream>
+using namespace std ;
+ int peak(int arr[],int size){
+    
+ }

@@ -1,27 +1,22 @@
 #include<iostream>
-using namespace std ;
-int search_binary(int arr[],int size,int key){
-    int start=0,end=size-1;
-    int mid=start+(end-start)/2;
-    while(start<=end){
-        if(arr[mid]==key){
-            return mid;
-        }
-        if(key>arr[mid]){
-            start=mid+1;
-        }
-        else{
-            end=mid-1;
-        }
-        mid=start+(end-start)/2;
-    } return -1;
+using namespace std; 
+int total_sum(int arr[],int size){
+    int sum=0;
+    for(int i=0;i<size;i++){
+        sum=sum+arr[i];
+    }
+    return sum;
 }
 int main(){
-    int arr[6]={1,2,3,4,5,6};
+    int arr[6]={1,7,3,6,5,6};
     int size=6;
-    int key;
-    cout<<"Enter the key : ";
-    cin>>key;
-    int index=search_binary(arr,size,key);
-    cout<<index;
+    int right_sum=total_sum(arr,size);
+    int left_sum=0;
+    for(int i=0;i<size;i++){
+        right_sum=right_sum-arr[i];
+        if(left_sum==right_sum){
+            cout<<"Pivot point found "<<i;
+        }
+        left_sum=left_sum+arr[i];
+    }
 }
