@@ -45,6 +45,11 @@
 
 
 //  pivot point in array
+
+
+//  note 
+
+//  this is the equilibrium finding question not the pivot of rotation
 #include<iostream>
 using namespace std; 
 int total_sum(int arr[],int size){

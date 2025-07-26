@@ -4,7 +4,7 @@
 using namespace std ;
 int pivot(int arr[],int size ){
 int s=0,e=size-1,mid=s+(e-s)/2;
-while(s<=e){
+while(s<e){
   if(arr[mid]>=arr[0]){
     s=mid+1;
 
