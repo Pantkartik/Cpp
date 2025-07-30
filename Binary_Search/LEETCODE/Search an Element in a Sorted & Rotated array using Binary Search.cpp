@@ -1,55 +1,70 @@
-// Search an Element in a Sorted & Rotated array using Binary Search
+// Approach is this 
 
+/*
+  1. find the pivot point 
+  2. if the target lies b/w the pivot point and arr.size()-1 perform binary search 
+  3. else perform binary search 
 
+*/
 
-//  approach is like this we have to first find the pivot point 
-// than we have to rotated or shift the index of pivot to the index 0 and the pivot+1... to the index 1 
-// than check for the entered k index in the rotated array 
 
 #include<iostream>
-using namespace std ; 
-int pivot_point(int arr[],int size){
-    int left_sum=0;
-    int total_sum=0;
-    int right_sum=0;
-    // finding the right indices sum which will be equal to total sum -1 ==> right sum 
-    for(int i=0;i<size;i++){
-        
-        total_sum += arr[i];
+using namespace std;
 
-    }
-    for(int i=0;i<size;i++){
-        right_sum=total_sum-arr[i];
-        if(right_sum==left_sum){
-            return i;
+int get_pivot(int arr[], int size) {
+    int start = 0, end = size - 1;
+    while(start < end){
+        int mid = start + (end - start) / 2;
+        if(arr[mid] >= arr[0]){
+            start = mid + 1;
         }
-        left_sum +=arr[i];
-    }
-}
-int rotate_right(int arr[],int size){
-    int point_rotate=pivot_point(arr,size);
-    for(int i=0;i<size;i++){
-        if(arr[i]==point_rotate+1){
-            arr[i]=arr[i+1];
+        else{
+            end = mid;
         }
     }
-    for(int i=0;i<size;i++){
-        // priting the rotated array
-        cout<<"Rotated array : "<<arr[i];
-    }
+    return start; // Index of smallest element
 }
+
+int binary_search(int arr[], int start, int end, int k){
+    while(start <= end){
+        int mid = start + (end - start) / 2;
+        if(arr[mid] == k){
+            return mid;
+        }
+        else if(arr[mid] < k){
+            start = mid + 1;
+        }
+        else{
+            end = mid - 1;
+        }
+    }
+    return -1; // Not found
+}
+
 int main(){
-    // checking for the return value of pivot
-    int arr[5]={1,2,5,7,8};
-    int size=5;
-    // cout<<pivot_point(arr,size);
+    int arr[6] = {8, 10, 17, 1, 3, 5};
+    int size = 6;
     int k;
-    cout<<"Enter the K : "<<endl;
-    cin>>k;
-    int rotated_array=rotate_right(arr,size);
-    if(k==rotated_array){
-        cout<<k<<"found"<<endl;
-    }
-    else return -1;
-}
 
+    cout << "Enter the k: ";
+    cin >> k;
+
+    int pivot = get_pivot(arr, size);
+    int index = -1;
+
+    // Decide which part to search
+    if(k >= arr[pivot] && k <= arr[size-1]){
+        index = binary_search(arr, pivot, size - 1, k);
+    } else {
+        index = binary_search(arr, 0, pivot - 1, k);
+    }
+
+    if(index != -1){
+        cout << k << " is found at index " << index << endl;
+    }
+    else{
+        cout << k << " is not found." << endl;
+    }
+
+    return 0;
+}
