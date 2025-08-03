@@ -1,0 +1,128 @@
+//  trying bubble sort , selection sort on my own 
+
+//  selection sort 
+
+
+// #include<iostream>
+// using namespace std;
+// void selection_sort(int arr[],int size){
+// for(int i=0;i<size-1;i++){
+//   int min_index=i;
+//   for(int j=i+1;j<size;j++){
+//     if(arr[j]<arr[min_index]){
+//       min_index=j;
+//     }
+//   }
+//   if(arr[min_index]!=i){
+//     swap(arr[i],arr[min_index]);
+//   }
+// }
+// }
+// void print_sel_sort(int arr[],int size){
+// for(int i=0;i<size;i++){
+//   cout<<arr[i]<<" ";
+// }
+// }
+
+// void bubble_sort(int arr[],int size){
+// for(int i=0;i<size-1;i++){
+//   for(int j=0;j<size-i-1;j++){
+//     if(arr[j]>arr[j+1]){
+//         swap(arr[j],arr[j+1]);
+//     }
+//   }
+// }
+// }
+// void print_bub_sort(int arr[],int size){
+//   for(int i=0;i<size;i++){
+//   cout<<arr[i]<<" ";
+// }
+// }
+// int main(){
+//   int arr[7]={ 5,3,7,2,8,9,4};
+//   int size=7;
+//   selection_sort(arr,size);
+//   print_sel_sort(arr,size);
+//   cout<<endl;
+//    bubble_sort(arr,size);
+//   print_bub_sort(arr,size);
+// }
+
+
+
+// selection sort
+//  logic 
+/*    we asssume the initial element of the array as the minimum of array  and than we compare it with the all the next elements till size -1 
+      if the arr[min_index] > arr[j]  update the value of min_index=j
+      if min_index is not equal to i than swap the pevious number with the next number
+
+this loop keeps on going till the size less than 1  
+*/
+
+// #include<iostream>
+// using namespace std ;
+// void selection_sort(int arr[],int size){
+//     for(int i=0;i<size-1;i++){
+//       int min_index=i;
+//       for(int j=i+1;j<size;j++){
+//         if(arr[j]<arr[min_index]){
+//           min_index=j;
+//         }
+//       }
+//       if(min_index!=i){
+//         swap(arr[i],arr[min_index]);
+//       }
+//     }
+// }
+// void print_array(int arr[],int size){
+//   for(int i=0;i<size;i++){
+//     cout<<arr[i]<<" ";
+//   }
+// }
+// int main(){
+//   int arr[10]={3,1,5,2,8,9,12,6,0,4};    // 0 1 2 3 4 5 6 8 9 12 
+//   int size=10;
+//   selection_sort(arr,size);
+//   print_array(arr,size);
+//   return 0;
+// }
+
+
+//  Bubble sort
+/*  logic : 
+              
+        let say we have a array : {4,3,2,1}  
+
+        we have to swap the elements in such a way that array sorted is { 1,2,3,4,5}
+
+        we start a loop from i to size-1 and in next loop we compare the initial element with the succesor of that if arr[j+1] > arr[j]   swap(arr[j],arr[j+1])
+
+        keeps on iteration till j = n-i-1    
+
+    */
+
+    #include<iostream>
+    using namespace std ;
+     
+
+    void bubble_sort(int arr[],int size){
+        for(int i=0;i<size-1;i++){
+            for(int j=0;j<size-i-1;j++){
+              if(arr[j+1]<arr[j]){
+                swap(arr[j],arr[j+1]);
+              }
+            }
+        }
+    }
+    void print_array(int arr[],int size){
+        for(int i=0;i<size;i++){
+          cout<<arr[i]<<" ";
+        }
+    }
+    int main(){
+    int arr[10]={3,1,5,2,8,9,12,6,0,4};    // 0 1 2 3 4 5 6 8 9 12 
+    int size=10;
+    bubble_sort(arr,size);
+    print_array(arr,size);
+    return 0;
+}
