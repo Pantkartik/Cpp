@@ -1,0 +1,26 @@
+ // logic is that : //
+  
+
+  let us take an example take a array with worst case
+
+
+
+  arr[6]={6,5,4,3,2,1};
+  
+  here size is 6 and we have to find the sorted array 
+
+  1.we assume that the element at the index at i=0 is sorted 
+  2. loop 1 start from i=1 and ends n-1 so that we get to know the array element for further sorting logic 
+  3. loop 2 start from j=i+1 till j>=0 j-- this is because let say at round 
+     1 : we compare i+1 so that 6>5 which shift the index as following 
+
+     shift logic : 
+     temp=arr[i];
+     if(arr[j]>temp){
+      arr[j+1]=arr[j];
+     }
+     else {
+      break;
+     }
+
+     arr[j+1]=temp;
