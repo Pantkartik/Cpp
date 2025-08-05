@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/naman/OneDrive/Documents/GitHub/Cpp/BASICS/bitwise_operators",
-      "program": "c:/Users/naman/OneDrive/Documents/GitHub/Cpp/BASICS/bitwise_operators/build/Debug/outDebug",
+      "cwd": "c:/Users/naman/OneDrive/Documents/GitHub/Cpp",
+      "program": "c:/Users/naman/OneDrive/Documents/GitHub/Cpp/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
