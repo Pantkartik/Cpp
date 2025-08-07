@@ -1,4 +1,4 @@
-//  STL IN ARRAY USED AS BELOW 
+// //  STL IN ARRAY USED AS BELOW 
 
 #include<iostream>
 #include<array>
@@ -25,3 +25,27 @@ int main(){
   
 
   
+
+// stl array 
+#include<iostream>
+#include<array>
+using namespace std ;
+int main(){
+  array<int,4>a={1,4,2,6};
+  a.size();
+  cout<<"size : "<<a.size()<<endl;
+for (auto i:a){
+  cout<<i<<endl;
+}
+  cout<<"First element : "<<a.front()<<endl;
+  
+  
+  cout<<"First element : "<<a.back()<<endl;
+
+  a.empty();
+  
+
+
+
+
+}

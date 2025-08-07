@@ -31,3 +31,32 @@ int main(){
   cout<<"Size : " <<v.size()<<endl;
 
 }
+
+
+
+
+//  when we add element and size is less than the size of the vector is doubled 
+
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+
+vector <int >v;
+cout<<"capacity before adding the element : "<<v.capacity()<<endl;
+
+
+v.push_back(10);
+v.push_back(20);
+v.push_back(30);
+v.push_back(200);
+v.push_back(100);
+
+// here 3 element is added and the capacity will be 6
+cout<<"Capacity after adding the element : "<<v.capacity()<<endl;
+
+
+cout<<"size : "<<v.size();
+
+}
